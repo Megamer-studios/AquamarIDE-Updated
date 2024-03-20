@@ -64,8 +64,7 @@ namespace AquamarIDE_Updared
 
         private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            string fileName = saveFileDialog1.FileName;
-            File.WriteAllText(fileName, richTextBox1.Text);
+
         }
 
         private void loadToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -106,6 +105,12 @@ namespace AquamarIDE_Updared
         {
             Form2 newForm = new Form2();
             newForm.Show();
+        }
+
+        private void saveFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string fileName = saveFileDialog1.FileName;
+            File.WriteAllText(fileName, richTextBox1.Text);
         }
     }
 }
