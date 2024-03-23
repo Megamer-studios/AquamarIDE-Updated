@@ -50,6 +50,9 @@
             changeBackgroundColorToolStripMenuItem = new ToolStripMenuItem();
             debugToolStripMenuItem = new ToolStripMenuItem();
             previewHTMLToolStripMenuItem = new ToolStripMenuItem();
+            clipboardToolStripMenuItem = new ToolStripMenuItem();
+            copyToolStripMenuItem = new ToolStripMenuItem();
+            pasteToolStripMenuItem = new ToolStripMenuItem();
             contextMenuStrip1.SuspendLayout();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -66,6 +69,7 @@
             richTextBox1.Size = new Size(1904, 1041);
             richTextBox1.TabIndex = 0;
             richTextBox1.Text = "";
+            richTextBox1.DoubleClick += richTextBox1_DoubleClick;
             // 
             // openFileDialog1
             // 
@@ -111,7 +115,7 @@
             // 
             // fileToolStripMenuItem1
             // 
-            fileToolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { loadToolStripMenuItem1, saveToolStripMenuItem1 });
+            fileToolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { loadToolStripMenuItem1, saveToolStripMenuItem1, clipboardToolStripMenuItem });
             fileToolStripMenuItem1.Name = "fileToolStripMenuItem1";
             fileToolStripMenuItem1.Size = new Size(37, 20);
             fileToolStripMenuItem1.Text = "File";
@@ -119,14 +123,14 @@
             // loadToolStripMenuItem1
             // 
             loadToolStripMenuItem1.Name = "loadToolStripMenuItem1";
-            loadToolStripMenuItem1.Size = new Size(100, 22);
+            loadToolStripMenuItem1.Size = new Size(180, 22);
             loadToolStripMenuItem1.Text = "Load";
             loadToolStripMenuItem1.Click += loadToolStripMenuItem1_Click;
             // 
             // saveToolStripMenuItem1
             // 
             saveToolStripMenuItem1.Name = "saveToolStripMenuItem1";
-            saveToolStripMenuItem1.Size = new Size(100, 22);
+            saveToolStripMenuItem1.Size = new Size(180, 22);
             saveToolStripMenuItem1.Text = "Save";
             saveToolStripMenuItem1.Click += saveToolStripMenuItem1_Click;
             // 
@@ -172,6 +176,27 @@
             previewHTMLToolStripMenuItem.Text = "Preview(HTML)";
             previewHTMLToolStripMenuItem.Click += previewHTMLToolStripMenuItem_Click;
             // 
+            // clipboardToolStripMenuItem
+            // 
+            clipboardToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { copyToolStripMenuItem, pasteToolStripMenuItem });
+            clipboardToolStripMenuItem.Name = "clipboardToolStripMenuItem";
+            clipboardToolStripMenuItem.Size = new Size(180, 22);
+            clipboardToolStripMenuItem.Text = "Clipboard";
+            // 
+            // copyToolStripMenuItem
+            // 
+            copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+            copyToolStripMenuItem.Size = new Size(180, 22);
+            copyToolStripMenuItem.Text = "Copy";
+            copyToolStripMenuItem.Click += copyToolStripMenuItem_Click;
+            // 
+            // pasteToolStripMenuItem
+            // 
+            pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
+            pasteToolStripMenuItem.Size = new Size(180, 22);
+            pasteToolStripMenuItem.Text = "Paste";
+            pasteToolStripMenuItem.Click += pasteToolStripMenuItem_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -213,5 +238,8 @@
         private ToolStripMenuItem changeBackgroundColorToolStripMenuItem;
         private ToolStripMenuItem debugToolStripMenuItem;
         private ToolStripMenuItem previewHTMLToolStripMenuItem;
+        private ToolStripMenuItem clipboardToolStripMenuItem;
+        private ToolStripMenuItem copyToolStripMenuItem;
+        private ToolStripMenuItem pasteToolStripMenuItem;
     }
 }

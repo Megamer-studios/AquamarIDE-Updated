@@ -112,5 +112,20 @@ namespace AquamarIDE_Updared
             string fileName = saveFileDialog1.FileName;
             File.WriteAllText(fileName, richTextBox1.Text);
         }
+
+        private void richTextBox1_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(richTextBox1.Text);
+        }
+
+        private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Text = Clipboard.GetText();
+        }
     }
 }
