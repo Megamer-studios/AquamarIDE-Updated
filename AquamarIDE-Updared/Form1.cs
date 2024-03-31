@@ -15,7 +15,7 @@ namespace AquamarIDE_Updared
         }
         public void ReadTextFile(string path)
         {
-            using (StreamReader reader = new StreamReader(path))
+          /*  using (StreamReader reader = new StreamReader(path))
             {
                 {
                     string line;
@@ -28,12 +28,12 @@ namespace AquamarIDE_Updared
                     richTextBox1.Text = builder.ToString();
 
                 }
-            }
+            }*/
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+             
         }
 
 
@@ -70,11 +70,13 @@ namespace AquamarIDE_Updared
         private void loadToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Multiselect = true;
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
                 richTextBox1.Text = fileDialog.FileName;
                 MessageBox.Show(fileDialog.SafeFileName + " has been loaded");
-                ReadTextFile(richTextBox1.Text);
+                 string content = File.ReadAllText(fileDialog.FileName);
+                richTextBox1.Text = content;
             }
         }
 
